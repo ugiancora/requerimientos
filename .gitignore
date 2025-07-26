@@ -205,3 +205,43 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# SQL Project specific files
+# Archivos de configuración de bases de datos
+*.env.local
+*.env.production
+config.ini
+database.ini
+
+# Archivos de conexión y credenciales
+connection_strings.txt
+passwords.txt
+credentials.json
+.credentials
+
+# Archivos temporales y de cache SQL
+*.tmp
+*.temp
+
+# Archivos de backup y dumps
+*.sql.bak
+*.backup
+*.dump
+*.dmp
+
+# Archivos específicos de herramientas SQL
+*.sqbpro
+*.sqlite
+*.sqlite3
+*.db
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Directorios de salida
+output/
+exports/
+reports/

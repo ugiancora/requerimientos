@@ -2,11 +2,11 @@
 
 ## 📋 Descripción
 
-Este repositorio contiene consultas SQL especializadas para el análisis de datos clínicos, enfocándose en la gestión y seguimiento de pacientes con enfermedades crónicas, particularmente diabetes mellitus y enfermedad renal crónica (ERC).
+Este repositorio contiene consultas SQL especializadas para el análisis de datos clínicos, enfocándose en la gestión y seguimiento de pacientes con enfermedades crónicas, particularmente diabetes mellitus, enfermedad renal crónica (ERC) y salud sexual y reproductiva.
 
 ## 🎯 Objetivo
 
-Facilitar la identificación y seguimiento de pacientes diabéticos en etapas avanzadas de enfermedad renal crónica mediante consultas SQL optimizadas y documentadas.
+Facilitar la identificación y seguimiento de pacientes con enfermedades crónicas y programas de salud reproductiva mediante consultas SQL optimizadas y documentadas, incluyendo análisis de continuidad de atención y seguimiento domiciliario.
 
 ## 📊 Fuentes de Datos
 
@@ -23,11 +23,23 @@ Facilitar la identificación y seguimiento de pacientes diabéticos en etapas av
 - **`rem_p.remp04_pbc_listado()`**: Función de listados específicos
   - Retorna listas de pacientes filtradas por fecha
 
+- **`biancora.cubo_salud_sexual_y_reproductiva`**: Cubo de salud sexual y reproductiva
+  - Registros de visitas domiciliarias integrales (VDI)
+  - Protocolos prenatales y resultados EPSA
+  - Seguimiento de atención materna integral
+
 ## 📁 Estructura del Repositorio
 
 ```
-├── pacientes etapa 3b 4 y 5 smartinez.sql    # Consulta principal ERC avanzada
-├── documentacion_sql.md                        # Documentación técnica detallada
+├── 20250726_pac_dm_etapa_3b_4_5_smartinez/     # Módulo ERC avanzada
+│   ├── 20250726_pac_dm_etapa_3b_4_5_smartinez.sql
+│   ├── 20250726_pac_dm_etapa_3b_4_5_smartinez.md
+│   └── CLAUDE.md
+├── 20250702 _VDI_a_EPSA_mfaundez/              # Módulo salud reproductiva
+│   ├── 20250702_VDI_a_EPSA_mfaundez.sql.sql
+│   └── documentacion_VDI_a_EPSA.md
+├── documentacion_sql.md                        # Documentación técnica legacy
+├── pacientes etapa 3b 4 y 5 smartinez.sql    # Script legacy ERC
 ├── CLAUDE.md                                   # Guía para desarrollo con IA
 └── README.md                                   # Este archivo
 ```
@@ -35,7 +47,7 @@ Facilitar la identificación y seguimiento de pacientes diabéticos en etapas av
 ## 🔍 Consultas Principales
 
 ### Pacientes ERC Etapas Avanzadas
-**Archivo**: `pacientes etapa 3b 4 y 5 smartinez.sql`
+**Archivo**: `20250726_pac_dm_etapa_3b_4_5_smartinez/20250726_pac_dm_etapa_3b_4_5_smartinez.sql`
 
 Identifica pacientes diabéticos en etapas críticas de enfermedad renal crónica:
 - **Etapa G3b** (VFG 30-44): Disminución moderada a severa
@@ -46,6 +58,20 @@ Identifica pacientes diabéticos en etapas críticas de enfermedad renal crónic
 - Información demográfica del paciente
 - Etapa ERC actual y fecha
 - Centro médico asignado
+
+### Seguimiento VDI a EPSA (Salud Reproductiva)
+**Archivo**: `20250702 _VDI_a_EPSA_mfaundez/20250702_VDI_a_EPSA_mfaundez.sql.sql`
+
+Analiza la continuidad de atención entre Visitas Domiciliarias Integrales (VDI) y el Examen Perinatal de Salud Ampliado (EPSA):
+- **Período de análisis**: VDI desde enero 2025
+- **Ventana de seguimiento**: Máximo 365 días entre EPSA y VDI
+- **Población objetivo**: Pacientes con protocolo prenatal activo
+
+**Campos de salida**:
+- Identificación del paciente (pac_id, nif2)
+- Fecha de visita domiciliaria integral
+- Resultado y fecha de ingreso EPSA
+- Análisis temporal de continuidad
 
 ## 🏥 Clasificación Clínica ERC
 
@@ -73,16 +99,28 @@ Las consultas utilizan un patrón estructurado de CTEs:
 
 ## 📖 Documentación
 
-- **`documentacion_sql.md`**: Documentación técnica completa de la consulta principal
+### Documentación por Módulo
+- **`20250726_pac_dm_etapa_3b_4_5_smartinez.md`**: Documentación ERC avanzada
+- **`documentacion_VDI_a_EPSA.md`**: Documentación salud reproductiva VDI-EPSA
+- **`documentacion_sql.md`**: Documentación técnica legacy
 - **`CLAUDE.md`**: Guía para desarrollo asistido por IA
 
 ## ⚕️ Uso Clínico
 
 Este repositorio está diseñado para:
+
+### Enfermedad Renal Crónica (ERC)
 - **Seguimiento de pacientes** en riesgo de terapia de reemplazo renal
 - **Identificación temprana** de deterioro de función renal
 - **Planificación de recursos** médicos especializados
 - **Reportes epidemiológicos** de ERC en población diabética
+
+### Salud Sexual y Reproductiva
+- **Continuidad de atención** prenatal y postnatal
+- **Evaluación de programas** de visitas domiciliarias
+- **Seguimiento de protocolos** EPSA y VDI
+- **Indicadores de calidad** en atención materna
+- **Análisis de adherencia** a programas de salud reproductiva
 
 ## 🔒 Consideraciones de Privacidad
 

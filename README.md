@@ -1,12 +1,16 @@
-# Repositorio de Consultas SQL - Datos Clínicos
+# Sistema de Consultas Clínicas y Análisis Asistencial
 
-## 📋 Descripción
+## 📋 ¿Qué encontrará en este repositorio?
 
-Este repositorio contiene consultas SQL especializadas para el análisis de datos clínicos, enfocándose en la gestión y seguimiento de pacientes con enfermedades crónicas, particularmente diabetes mellitus, enfermedad renal crónica (ERC) y salud sexual y reproductiva.
+Este repositorio es una biblioteca de herramientas de análisis diseñada específicamente para profesionales clínicos y administradores de salud. Contiene consultas especializadas que le permitirán obtener información estratégica para la toma de decisiones clínicas y mejora de la calidad asistencial.
 
-## 🎯 Objetivo
+## 🎯 Objetivo Principal
 
-Facilitar la identificación y seguimiento de pacientes con enfermedades crónicas y programas de salud reproductiva mediante consultas SQL optimizadas y documentadas, incluyendo análisis de continuidad de atención y seguimiento domiciliario.
+Proporcionar herramientas de análisis que permitan a los equipos clínicos:
+- **Identificar pacientes de riesgo** que requieren atención prioritaria
+- **Evaluar la calidad** de los registros clínicos y procesos asistenciales  
+- **Monitorear indicadores** de salud poblacional y continuidad de cuidados
+- **Optimizar recursos** mediante análisis de demanda y utilización de servicios
 
 ## 📊 Fuentes de Datos
 
@@ -28,50 +32,50 @@ Facilitar la identificación y seguimiento de pacientes con enfermedades crónic
   - Protocolos prenatales y resultados EPSA
   - Seguimiento de atención materna integral
 
-## 📁 Estructura del Repositorio
+## 🏥 Áreas Clínicas Cubiertas
 
-```
-├── 20250726_pac_dm_etapa_3b_4_5_smartinez/     # Módulo ERC avanzada
-│   ├── 20250726_pac_dm_etapa_3b_4_5_smartinez.sql
-│   ├── 20250726_pac_dm_etapa_3b_4_5_smartinez.md
-│   └── CLAUDE.md
-├── 20250702 _VDI_a_EPSA_mfaundez/              # Módulo salud reproductiva
-│   ├── 20250702_VDI_a_EPSA_mfaundez.sql.sql
-│   └── documentacion_VDI_a_EPSA.md
-├── documentacion_sql.md                        # Documentación técnica legacy
-├── pacientes etapa 3b 4 y 5 smartinez.sql    # Script legacy ERC
-├── CLAUDE.md                                   # Guía para desarrollo con IA
-└── README.md                                   # Este archivo
-```
+El repositorio está organizado por especialidades y casos de uso clínicos específicos:
 
-## 🔍 Consultas Principales
+### 🩺 **Enfermedades Crónicas y Comorbilidades**
+- **Diabetes Mellitus**: Identificación de pacientes en etapas avanzadas de ERC
+- **Enfermedad Renal Crónica**: Estratificación por estadios G3b, G4 y G5
+- **ECICEP**: Pacientes elegibles para cuidados integrales continuos
+- **Estratificación de Riesgo**: Comparación ACG vs evaluación clínica cualitativa
 
-### Pacientes ERC Etapas Avanzadas
-**Archivo**: `20250726_pac_dm_etapa_3b_4_5_smartinez/20250726_pac_dm_etapa_3b_4_5_smartinez.sql`
+### 👶 **Salud Materno-Infantil**
+- **Continuidad Prenatal**: Seguimiento VDI a EPSA
+- **Métodos Anticonceptivos**: Monitoreo PBC P1 
+- **Embarazadas de Riesgo**: Detección de consumo de sustancias
+- **Protocolos de Atención**: Seguimiento de embarazadas en programas específicos
 
-Identifica pacientes diabéticos en etapas críticas de enfermedad renal crónica:
-- **Etapa G3b** (VFG 30-44): Disminución moderada a severa
-- **Etapa G4** (VFG 15-29): Disminución severa  
-- **Etapa G5** (VFG <15): Falla renal
+### 📊 **Gestión y Calidad Asistencial**
+- **Completitud de Registros**: Detección de atenciones sin protocolo
+- **Agenda y Asistencia**: Análisis de concordancia registro-atención
+- **Interconsultas**: Monitoreo de derivaciones ginecológicas
+- **Personal Médico**: Análisis de consultas por becados
+- **Indicadores de Calidad**: Métricas de proceso y resultado
 
-**Campos de salida**:
-- Información demográfica del paciente
-- Etapa ERC actual y fecha
-- Centro médico asignado
+### 💊 **Farmacia y Tratamientos**
+- **Aerocámaras e Inhaladores**: Prescripción y seguimiento
+- **Medicamentos Crónicos**: Adherencia y dispensación
+- **Protocolos Farmacológicos**: Seguimiento de tratamientos específicos
 
-### Seguimiento VDI a EPSA (Salud Reproductiva)
-**Archivo**: `20250702 _VDI_a_EPSA_mfaundez/20250702_VDI_a_EPSA_mfaundez.sql.sql`
+### 📞 **Comunicación y Seguimiento**
+- **Datos de Contacto**: Actualización teléfonos y correos
+- **Confirmación de Citas**: Sistemas de recordatorio
+- **Direcciones**: Validación y actualización de domicilios
 
-Analiza la continuidad de atención entre Visitas Domiciliarias Integrales (VDI) y el Examen Perinatal de Salud Ampliado (EPSA):
-- **Período de análisis**: VDI desde enero 2025
-- **Ventana de seguimiento**: Máximo 365 días entre EPSA y VDI
-- **Población objetivo**: Pacientes con protocolo prenatal activo
+## 📈 **Casos de Uso Principales**
 
-**Campos de salida**:
-- Identificación del paciente (pac_id, nif2)
-- Fecha de visita domiciliaria integral
-- Resultado y fecha de ingreso EPSA
-- Análisis temporal de continuidad
+### Para Clínicos
+- **Lista de Pacientes de Riesgo**: Identificación automática por patología y estadio
+- **Seguimiento de Continuidad**: Análisis de adherencia a protocolos
+- **Evaluación de Resultados**: Métricas de efectividad de intervenciones
+
+### Para Administradores
+- **Indicadores de Calidad**: Completitud de registros y procesos
+- **Utilización de Recursos**: Análisis de demanda y capacidad
+- **Planificación**: Proyecciones basadas en prevalencia y tendencias
 
 ## 🏥 Clasificación Clínica ERC
 
@@ -105,37 +109,99 @@ Las consultas utilizan un patrón estructurado de CTEs:
 - **`documentacion_sql.md`**: Documentación técnica legacy
 - **`CLAUDE.md`**: Guía para desarrollo asistido por IA
 
-## ⚕️ Uso Clínico
+## 🗂️ **Organización por Años y Requerimientos**
 
-Este repositorio está diseñado para:
+### **2025 - Consultas Actuales** (50+ consultas especializadas)
+Incluye análisis avanzados de:
+- **Programas ECICEP**: Identificación y seguimiento de pacientes complejos
+- **Calidad de Registros**: Detección de brechas en documentación
+- **Continuidad de Cuidados**: Análisis de adherencia a protocolos
+- **Estratificación de Riesgo**: Validación de algoritmos ACG
 
-### Enfermedad Renal Crónica (ERC)
-- **Seguimiento de pacientes** en riesgo de terapia de reemplazo renal
-- **Identificación temprana** de deterioro de función renal
-- **Planificación de recursos** médicos especializados
-- **Reportes epidemiológicos** de ERC en población diabética
+### **2020-2024 - Archivo Histórico** (200+ consultas)
+Base de conocimiento con:
+- **Evolución de Indicadores**: Tendencias históricas de calidad
+- **Metodologías Validadas**: Consultas probadas en el tiempo
+- **Casos de Referencia**: Ejemplos de implementación exitosa
 
-### Salud Sexual y Reproductiva
-- **Continuidad de atención** prenatal y postnatal
-- **Evaluación de programas** de visitas domiciliarias
-- **Seguimiento de protocolos** EPSA y VDI
-- **Indicadores de calidad** en atención materna
-- **Análisis de adherencia** a programas de salud reproductiva
+## ⚕️ **Aplicación en la Práctica Clínica**
+
+### **Para Médicos y Enfermeras**
+- **Lista de Pacientes Prioritarios**: Genere automáticamente listas de pacientes que requieren atención inmediata según criterios clínicos
+- **Seguimiento de Comorbilidades**: Identifique pacientes diabéticos con deterioro renal que necesitan derivación a nefrología
+- **Evaluación de Adherencia**: Monitoree el cumplimiento de protocolos de atención por parte de sus pacientes
+
+### **Para Matronas y Obstetras**
+- **Continuidad Prenatal**: Verifique que todas las embarazadas tengan seguimiento completo desde VDI hasta EPSA
+- **Detección de Riesgo**: Identifique embarazadas con consumo de sustancias o factores de riesgo
+- **Planificación Familiar**: Monitoree el uso de métodos anticonceptivos en población objetivo
+
+### **Para Administradores y Jefes de Servicio**
+- **Indicadores de Calidad**: Mida la completitud de registros clínicos y adherencia a protocolos
+- **Gestión de Recursos**: Analice demanda de consultas especializadas y optimice la programación
+- **Reportes Gerenciales**: Genere informes automáticos para la toma de decisiones estratégicas
 
 ## 🔒 Consideraciones de Privacidad
 
-- Los datos de pacientes están anonimizados mediante identificadores únicos (`pac_id`)
-- No se incluyen datos sensibles en el repositorio
-- Las consultas siguen estándares de privacidad médica
+⚠️ **ALERTA DE SEGURIDAD**: Este repositorio contiene referencias a datos personales identificables que requieren atención inmediata.
 
-## 📝 Contribuciones
+### Estado Actual
+- **CRÍTICO**: Múltiples archivos contienen datos no anonimizados
+- Se encontraron RUTs, nombres y datos de contacto reales
+- Requiere limpieza completa antes de uso en producción
 
-Para contribuir al repositorio:
-1. Documentar nuevas consultas siguiendo el patrón CTE establecido
-2. Incluir documentación técnica detallada
-3. Validar resultados clínicos con personal médico especializado
-4. Mantener consistencia en nomenclatura de campos
+### Mejores Prácticas Implementadas
+- Uso de identificadores únicos (`pac_id`) en scripts principales
+- Documentación de técnicas de anonimización
+- Guías para desarrollo seguro de consultas
 
-## 📞 Contacto
+📋 **Ver**: `ANONIMIZACION.md` para guía completa de mejores prácticas y corrección de problemas de privacidad.
 
-Para consultas técnicas o clínicas sobre las consultas SQL, contactar al equipo de análisis de datos clínicos.
+## 🚀 **Cómo Comenzar**
+
+### **Paso 1: Identifique su necesidad clínica**
+- ¿Necesita identificar pacientes de riesgo específicos?
+- ¿Requiere evaluar la calidad de sus registros clínicos?
+- ¿Desea analizar indicadores de su servicio?
+
+### **Paso 2: Busque en el repositorio**
+- Navegue por los directorios organizados por año (2025 para lo más actual)
+- Revise las carpetas por especialidad clínica
+- Cada consulta incluye documentación detallada en formato `.md`
+
+### **Paso 3: Adapte a su contexto**
+- Las consultas están diseñadas para ser reutilizables
+- Modifique fechas, centros y criterios según su necesidad
+- Consulte la documentación técnica para entender cada campo
+
+### **Ejemplo Práctico**
+Para obtener pacientes diabéticos en riesgo renal:
+1. Vaya a `2025/20250726 - listado pacientes con etapa erc 3b 4 y 5/`
+2. Revise la documentación `.md` para entender los criterios
+3. Ejecute la consulta `.sql` adaptando el centro médico
+4. Obtenga su lista de pacientes prioritarios
+
+## 📋 **Estructura de Cada Requerimiento**
+
+Cada consulta incluye:
+- **Archivo SQL**: Consulta ejecutable lista para usar
+- **Documentación MD**: Explicación detallada del objetivo y criterios
+- **README** (en algunos casos): Guía específica de implementación
+
+## 🤝 **Solicitar Nuevas Consultas**
+
+Si requiere una consulta específica que no está disponible:
+1. Defina claramente el objetivo clínico
+2. Especifique la población objetivo y criterios de inclusión/exclusión
+3. Indique los campos de salida requeridos
+4. Proporcione el contexto de uso (informes, seguimiento, etc.)
+
+## 📞 **Soporte y Contacto**
+
+- **Consultas técnicas**: Equipo de análisis de datos clínicos
+- **Validación clínica**: Profesionales médicos del equipo
+- **Nuevos requerimientos**: A través de los canales institucionales establecidos
+
+---
+
+📍 **Nota**: Este repositorio contiene más de 250 consultas especializadas desarrolladas entre 2020-2025, representando años de experiencia en análisis de datos clínicos y mejora de la calidad asistencial.
